@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chẩn đoán bệnh tim</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🫀 Chẩn Đoán Bệnh Tim</h1>
+        <p>Chọn các triệu chứng bạn đang gặp phải:</p>
+        
+        <form method="post">
+            <div class="checkbox-container">
+                <div class="checkbox-column">
+                    <label><input type="checkbox" name="symptoms" value="đau ngực"> Đau ngực</label>
+                    <label><input type="checkbox" name="symptoms" value="khó thở"> Khó thở</label>
+                    <label><input type="checkbox" name="symptoms" value="mệt mỏi"> Mệt mỏi</label>
+                    <label><input type="checkbox" name="symptoms" value="đánh trống ngực"> Đánh trống ngực</label>
+                    <label><input type="checkbox" name="symptoms" value="phù chân"> Phù chân</label>
+                    <label><input type="checkbox" name="symptoms" value="hồi hộp"> Hồi hộp</label>
+                </div>
+                <div class="checkbox-column">
+                    <label><input type="checkbox" name="symptoms" value="chóng mặt"> Chóng mặt</label>
+                    <label><input type="checkbox" name="symptoms" value="đau đầu"> Đau đầu</label>
+                    <label><input type="checkbox" name="symptoms" value="tê tay"> Tê tay</label>
+                    <label><input type="checkbox" name="symptoms" value="buồn nôn"> Buồn nôn</label>
+                    <label><input type="checkbox" name="symptoms" value="hoa mắt"> Hoa mắt</label>
+                    <label><input type="checkbox" name="symptoms" value="ho kéo dài"> Ho kéo dài</label>
+                </div>
+                <div class="checkbox-column">
+                    <label><input type="checkbox" name="symptoms" value="đổ mồ hôi lạnh"> Đổ mồ hôi lạnh</label>
+                    <label><input type="checkbox" name="symptoms" value="huyết áp cao"> Huyết áp cao</label>
+                    <label><input type="checkbox" name="symptoms" value="huyết áp thấp"> Huyết áp thấp</label>
+                    <label><input type="checkbox" name="symptoms" value="tăng huyết áp"> Tăng huyết áp</label>
+                    <label><input type="checkbox" name="symptoms" value="tức ngực"> Tức ngực</label>
+                    <label><input type="checkbox" name="symptoms" value="môi tím tái"> Môi tím tái</label>
+                </div>
+                <div class="checkbox-column">
+                    <label><input type="checkbox" name="symptoms" value="khó thở về đêm"> Khó thở về đêm</label>
+                    <label><input type="checkbox" name="symptoms" value="tê bì chân tay"> Tê bì chân tay</label>
+                    <label><input type="checkbox" name="symptoms" value="mất ý thức"> Mất ý thức</label>
+                    <label><input type="checkbox" name="symptoms" value="mất thăng bằng"> Mất thăng bằng</label>
+                    <label><input type="checkbox" name="symptoms" value="đau đầu buổi sáng"> Đau đầu buổi sáng</label>
+                    <label><input type="checkbox" name="symptoms" value="mờ mắt"> Mờ mắt</label>
+                </div>
+                <div class="checkbox-column">
+                    <label><input type="checkbox" name="symptoms" value="tiền sử gia đình bệnh tim"> Tiền sử bệnh tim</label>
+                    <label><input type="checkbox" name="symptoms" value="tuổi trên 50"> Trên 50 tuổi</label>
+                    <label><input type="checkbox" name="symptoms" value="chế độ ăn uống không lành mạnh"> Ăn uống không lành mạnh</label>
+                    <label><input type="checkbox" name="symptoms" value="giới tính nam"> Nam giới</label>
+                    <label><input type="checkbox" name="symptoms" value="giới tính nữ"> Nữ giới</label>
+                    <label><input type="checkbox" name="symptoms" value="yếu liệt tay chân"> Yếu liệt tay chân</label>
+                </div>
+                <div class="checkbox-column">
+                    <label><input type="checkbox" name="symptoms" value="đau thắt ngực"> Đau thắt ngực</label>
+                    <label><input type="checkbox" name="symptoms" value="nói lắp"> Nói lắp</label>
+                    <label><input type="checkbox" name="symptoms" value="sốt"> Sốt</label>
+                    <label><input type="checkbox" name="symptoms" value="tim đập nhanh"> Tim đập nhanh</label>
+                    <label><input type="checkbox" name="symptoms" value="tim đập chậm"> Tim đập chậm</label>
+                    <label><input type="checkbox" name="symptoms" value="đau ngực khi nằm"> Đau ngực khi nằm</label>
+                </div>
+            </div>
+            <button type="submit">🩺 Chẩn đoán</button>
+        </form>
+        
+        {% if diagnosis %}
+            <h3>Kết quả chẩn đoán:</h3>
+            <div class="result-box">
+                {% for result in diagnosis %}
+                    <p>✅ {{ result }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
+
+
+
