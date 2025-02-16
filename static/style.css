@@ -1,82 +1,110 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    text-align: center;
+/* Reset cơ bản */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .container {
     background: white;
-    max-width: 800px; /* Mở rộng khung container */
-    margin: 50px auto;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
 }
 
 h1 {
-    color: #d9534f;
+    color: #d32f2f;
+    margin-bottom: 15px;
 }
 
 p {
     font-size: 16px;
-    color: #555;
+    margin-bottom: 20px;
 }
 
-/* Chia triệu chứng thành 3 cột */
+/* Style cho nhóm triệu chứng */
 .checkbox-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cột */
-    gap: 10px;
-    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.checkbox-column {
-    background: #f1f1f1;
-    padding: 10px;
-    border-radius: 8px;
+h3 {
+    background-color: #d32f2f;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
     text-align: left;
+    font-size: 18px;
 }
 
-.checkbox-column label {
-    display: block;
-    padding: 6px;
+/* Style checkbox */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f9f9f9;
+    border-left: 5px solid #d32f2f;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    width: 45%;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
     cursor: pointer;
 }
 
-.checkbox-column input {
-    margin-right: 8px;
-}
-
-/* Nút bấm */
+/* Nút chẩn đoán */
 button {
-    background-color: #d9534f;
+    background-color: #d32f2f;
     color: white;
-    font-size: 16px;
-    border: none;
+    font-size: 18px;
     padding: 10px 20px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
     transition: 0.3s;
 }
 
 button:hover {
-    background-color: #c9302c;
+    background-color: #b71c1c;
 }
 
-/* Hộp kết quả */
+/* Kết quả chẩn đoán */
 .result-box {
-    background: #e9f5e9;
+    margin-top: 20px;
     padding: 15px;
+    background: #e8f5e9;
+    border-left: 5px solid #4caf50;
     border-radius: 5px;
-    color: #155724;
-    margin-top: 15px;
+    text-align: left;
 }
 
-/* Responsive: Khi màn hình nhỏ hơn 600px, tự động về 1 cột */
-@media (max-width: 600px) {
-    .checkbox-container {
-        grid-template-columns: 1fr; /* Chuyển về 1 cột */
-    }
+.result-box p {
+    color: #2e7d32;
+    font-size: 16px;
+    font-weight: bold;
 }
